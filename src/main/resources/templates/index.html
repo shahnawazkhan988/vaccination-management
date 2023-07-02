@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<title>PT</title>
+</head>
+<body>
+	<div>
+    	<a th:href="@{/new}">New PT</a>
+  	</div>
+	<!-- if record has been empty  --> 
+	<div th:if="${pt.empty}">
+		<div>No PT</div>
+	</div>
+	<!-- else record -->
+	<div th:unless="${pt.empty}">
+		<table id="pt_table" aria-label="PT Table">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>PT_NAME</th>
+					<th>PT_FISCAL_CODE</th>
+					<th>PT_VACCSIONATION_NAME</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="pt : ${pt}">
+				<td th:text="${pt.id}"></td>
+				<td th:text="${pt.ptName}"></td>
+				<td th:text="${pt.ptFiscalCode}"></td>
+				<td th:text="${pt.ptVaccsionationName}"></td>
+				<td><a th:href="@{'/edit/' + ${pt.id}}">Edit</a></td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
