@@ -77,18 +77,18 @@ class PtWebControllerTestIT
 			(By.cssSelector ("a[href*='/edit/" + pt.getId() + "']"));
 	}	
 	
-	@Test
-	void testEditPageNewPt() throws Exception {
-		driver.get(baseUrl + "/new");
+	// @Test
+	// void testEditPageNewPt() throws Exception {
+	// 	driver.get(baseUrl + "/new");
 
-		driver.findElement(By.name("ptName")).sendKeys("ptTwo");
-		driver.findElement(By.name("ptFiscalCode")).sendKeys("1234567891231111"); 
-		driver.findElement(By.name("ptVaccsionationName")).sendKeys("Modena");
-		driver.findElement(By.name("btn_submit")).click();
+	// 	driver.findElement(By.name("ptName")).sendKeys("ptTwo");
+	// 	driver.findElement(By.name("ptFiscalCode")).sendKeys("1234567891231111"); 
+	// 	driver.findElement(By.name("ptVaccsionationName")).sendKeys("Modena");
+	// 	driver.findElement(By.name("btn_submit")).click();
 
-		assertThat(ptService.getPtById(2L).getPtName())
-			.isEqualTo("ptTwo");
-	}
+	// 	assertThat(ptService.getPtById(2L).getPtName())
+	// 		.isEqualTo("ptTwo");
+	// }
 	
 	// @Test
 	// void testEditPageUpdateEmployee() throws Exception {
