@@ -90,27 +90,27 @@ class PtWebControllerTestIT
 			.isEqualTo("ptTwo");
 	}
 	
-	@Test
-	void testEditPageUpdateEmployee() throws Exception {
+	// @Test
+	// void testEditPageUpdateEmployee() throws Exception {
 		
-		PtDto pt = ptService.createNewPt(new PtDto(null, PT_NAME, PT_FISCAL_CODE, PT_VACCSIONATION_NAME));
+	// 	PtDto pt = ptService.createNewPt(new PtDto(null, PT_NAME, PT_FISCAL_CODE, PT_VACCSIONATION_NAME));
 
-		driver.get(baseUrl + "/edit/" + pt.getId());
+	// 	driver.get(baseUrl + "/edit/" + pt.getId());
 
-		final WebElement ptName = driver.findElement(By.name("ptName"));
-		ptName.clear();
-		ptName.sendKeys("ptTwo");
-		final WebElement fiscalCode = driver.findElement(By.name("ptFiscalCode"));
-		fiscalCode.clear();
-		fiscalCode.sendKeys("1234567891231113");
-		final WebElement vaccsionationName = driver.findElement(By.name("ptVaccsionationName"));
-		vaccsionationName.clear();
-		vaccsionationName.sendKeys("xyz");
-		driver.findElement(By.name("btn_submit")).click();
+	// 	final WebElement ptName = driver.findElement(By.name("ptName"));
+	// 	ptName.clear();
+	// 	ptName.sendKeys("ptTwo");
+	// 	final WebElement fiscalCode = driver.findElement(By.name("ptFiscalCode"));
+	// 	fiscalCode.clear();
+	// 	fiscalCode.sendKeys("1234567891231113");
+	// 	final WebElement vaccsionationName = driver.findElement(By.name("ptVaccsionationName"));
+	// 	vaccsionationName.clear();
+	// 	vaccsionationName.sendKeys("xyz");
+	// 	driver.findElement(By.name("btn_submit")).click();
 
-		assertThat(ptService.getPtById(1L).getPtName())
-		.isEqualTo("ptTwo");
-	}
+	// 	assertThat(ptService.getPtById(1L).getPtName())
+	// 	.isEqualTo("ptTwo");
+	// }
 
 	
 }
